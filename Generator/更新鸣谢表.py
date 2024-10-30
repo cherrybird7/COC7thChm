@@ -1,8 +1,8 @@
 import os
 import math
 
-TEMPLATE_PATH = "../模板/鸣谢列表模板.htm"
-THANKS_PATH_1 = "../鸣谢列表/翻译贡献者列表.txt"
+TEMPLATE_PATH = "../空白页模板/鸣谢列表模板.htm"
+THANKS_PATH_1 = "../鸣谢列表/翻译奉献者列表.txt"
 THANKS_PATH_2 = "../鸣谢列表/CHM制作者列表.txt"
 THANKS_PATH_3 = "../鸣谢列表/纠错参与者列表.txt"
 OUTPUT_PATH = "../鸣谢列表.htm"
