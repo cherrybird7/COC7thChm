@@ -1,7 +1,7 @@
 import os
 
 # 指定要转换的目录
-directory = r'd:\COC不全书\CoC-Necronomicon\怪物之锤'
+directory = r'd:\COC不全书\COC7thChm\怪物之锤'
 
 # 遍历指定目录下的所有文件
 for filename in os.listdir(directory):

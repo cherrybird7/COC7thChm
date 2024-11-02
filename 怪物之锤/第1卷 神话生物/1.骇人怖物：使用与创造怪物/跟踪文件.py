@@ -99,7 +99,7 @@ links = [
 ]
 
 # 基础路径，例如您指定的文件夹
-base_path = r"d:\COC不全书\CoC-Necronomicon\怪物之锤"
+base_path = r"d:\COC不全书\COC7thChm\怪物之锤"
 
 # 检查链接是否有效，并尝试定位新位置
 def find_file(filename, search_paths):
@@ -122,8 +122,8 @@ def track_link(link):
         # 尝试在多个目录中查找文件
         search_paths = [
             os.path.dirname(full_path),  # 当前文件夹
-            r"d:\COC不全书\CoC-Necronomicon\怪物之锤\第1卷 神话生物\2.怪异而不同寻常：神话中的怪物",
-            r"d:\COC不全书\CoC-Necronomicon\怪物之锤"  # 基本路径
+            r"d:\COC不全书\COC7thChm\怪物之锤\第1卷 神话生物\2.怪异而不同寻常：神话中的怪物",
+            r"d:\COC不全书\COC7thChm\怪物之锤"  # 基本路径
         ]
 
         # 查找文件
