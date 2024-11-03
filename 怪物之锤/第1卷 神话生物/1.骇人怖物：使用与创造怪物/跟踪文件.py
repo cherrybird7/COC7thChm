@@ -99,35 +99,35 @@ links = [
 ]
 
 # 基础路径，例如您指定的文件夹
-base_path = r"d:\COC不全书\CoC-Necronomicon\怪物之锤"
+base_path = r"d:\COC不全书\COC7thChm\怪物之锤"
 
 # 检查链接是否有效，并尝试定位新位置
-def find_file(filename, search_paths):
+def find_file（filename, search_paths）:
     for path in search_paths:
-        candidate_path = os.path.join(path, filename)
-        if os.path.exists(candidate_path):
+        candidate_path = os.path.join（path, filename）
+        if os.path.exists（candidate_path）:
             return candidate_path
     return None
 
-def track_link(link):
+def track_link（link）:
     # 清除相对路径并生成完整路径
-    full_path = os.path.normpath(os.path.join(base_path, link.strip().replace("../", "")))
+    full_path = os.path.normpath（os.path.join（base_path, link.strip（）.replace（"../", ""）））
     
-    if os.path.exists(full_path):
+    if os.path.exists（full_path）:
         return f"链接有效: {full_path}"
     else:
         # 找到文件名
-        filename = os.path.basename(full_path)
+        filename = os.path.basename（full_path）
 
         # 尝试在多个目录中查找文件
         search_paths = [
-            os.path.dirname(full_path),  # 当前文件夹
-            r"d:\COC不全书\CoC-Necronomicon\怪物之锤\第1卷 神话生物\2.怪异而不同寻常：神话中的怪物",
-            r"d:\COC不全书\CoC-Necronomicon\怪物之锤"  # 基本路径
+            os.path.dirname（full_path）,  # 当前文件夹
+            r"d:\COC不全书\COC7thChm\怪物之锤\第1卷 神话生物\2.怪异而不同寻常：神话中的怪物",
+            r"d:\COC不全书\COC7thChm\怪物之锤"  # 基本路径
         ]
 
         # 查找文件
-        new_path = find_file(filename, search_paths)
+        new_path = find_file（filename, search_paths）
         if new_path:
             return f"链接失效, 但找到新的位置: {new_path}"
         else:
@@ -135,5 +135,5 @@ def track_link(link):
 
 # 检查所有链接
 for link in links:
-    result = track_link(link)
-    print(result)
+    result = track_link（link）
+    print（result）
