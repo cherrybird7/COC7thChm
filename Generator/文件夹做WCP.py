@@ -9,7 +9,7 @@ Title=COC7th 不全书
 RootDir=
 Dictionary=en_US
 DefaultTopic=写在前面.htm
-CompiledFile=<Project_Folder>_output\HTML Help\试做COC残缺大典原始版本 (2）.chm
+CompiledFile=<Project_Folder>_output\HTML Help\试做COC残缺大典原始版本 (2).chm
 CustomTemplate=<Project_Folder>\模板\空白页模板.htm
 DefaultTemplate=0
 Language=0x0804
@@ -33,7 +33,7 @@ WebHelpLanguage=1
 StartFromRoot=1
 AutoCollapse=0
 DrawLines=1
-SingleHtmlFilename=试做COC残缺大典原始版本 (2）.htm
+SingleHtmlFilename=试做COC残缺大典原始版本 (2).htm
 SingleHtmlOutputFolder=<Project_Folder>_output\SingleHTML\
 SingleHtmlTitle=COC7th 不全书
 SingleHtmlHasToc=0
@@ -135,35 +135,35 @@ TitleList="""
 
 
 if __name__ == "__main__":
-    root = tk.Tk(）
-    root.withdraw(）
-    file_path = filedialog.askdirectory(title="选择所用的文件夹（与工程目录之间取相对路径）",initialdir=r"../"）
+    root = tk.Tk()
+    root.withdraw()
+    file_path = filedialog.askdirectory(title="选择所用的文件夹（与工程目录之间取相对路径）",initialdir=r"../")
     if file_path != None:
-        relative_file_path = os.path.relpath(file_path,"../"）
-        print("文件夹地址：./"+file_path）
-        wcp_name = os.path.basename(file_path）
-        print("wcp名称："+wcp_name+"_生成.wcp"）
+        relative_file_path = os.path.relpath(file_path,"../")
+        print("文件夹地址：./"+file_path)
+        wcp_name = os.path.basename(file_path)
+        print("wcp名称："+wcp_name+"_生成.wcp")
         object_list = []
-        for folder, dirs, files in os.walk(file_path）:
-            folder_name = os.path.basename(folder）
-            relative_path = os.path.relpath(folder,"../"）
-            depth = relative_path.count("/"）+relative_path.count("\\"）
-            object_list.append([folder_name,"",depth]）
-            #print(folder_name + ":" + str(files））
+        for folder, dirs, files in os.walk(file_path):
+            folder_name = os.path.basename(folder)
+            relative_path = os.path.relpath(folder,"../")
+            depth = relative_path.count("/")+relative_path.count("\\")
+            object_list.append([folder_name,"",depth])
+            #print(folder_name + ":" + str(files))
             for name in files:
-                object_list.append([name.split('.'）[0],os.path.relpath(os.path.join(folder,name）,"../"）,depth+1]）
-        #print(object_list）
+                object_list.append([name.split('.')[0],os.path.relpath(os.path.join(folder,name),"../"),depth+1])
+        #print(object_list)
         object_str_list = []
         index = 0
         for object_data in object_list:
-            object_str_list.append("TitleList.Title."+str(index）+"="+object_data[0]+"\nTitleList.Level."+str(index）+"="+str(object_data[2]）+"\nTitleList.Url."+str(index）+"="+object_data[1]+"\nTitleList.Status."+str(index）+"=0\nTitleList.Keywords."+str(index）+"=\nTitleList.ContextNumber."+str(index）+"="+str(index+1000）+"\nTitleList.ApplyTemp."+str(index）+"=0\nTitleList.Expanded."+str(index）+"=0\nTitleList.Kind."+str(index）+"=0"）
+            object_str_list.append("TitleList.Title."+str(index)+"="+object_data[0]+"\nTitleList.Level."+str(index)+"="+str(object_data[2])+"\nTitleList.Url."+str(index)+"="+object_data[1]+"\nTitleList.Status."+str(index)+"=0\nTitleList.Keywords."+str(index)+"=\nTitleList.ContextNumber."+str(index)+"="+str(index+1000)+"\nTitleList.ApplyTemp."+str(index)+"=0\nTitleList.Expanded."+str(index)+"=0\nTitleList.Kind."+str(index)+"=0")
             index += 1
         
-        with open("../"+wcp_name+"_生成.wcp",'wb'） as _f:
-            _f.write(codecs.BOM_UTF16_LE）
-            _f.write((PREFIX + str(len(object_list）））.encode('utf-16-le'））
+        with open("../"+wcp_name+"_生成.wcp",'wb') as _f:
+            _f.write(codecs.BOM_UTF16_LE)
+            _f.write((PREFIX + str(len(object_list))).encode('utf-16-le'))
             for object_str in object_str_list:
-                _f.write(("\n"+object_str）.encode('utf-16-le'））
-        print("已完成制作！"）
+                _f.write(("\n"+object_str).encode('utf-16-le'))
+        print("已完成制作！")
     else:
-        print("已取消"）
+        print("已取消")
