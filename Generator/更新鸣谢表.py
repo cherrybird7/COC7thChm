@@ -1,11 +1,12 @@
 import os
 import math
+from pypinyin import lazy_pinyin
 
-TEMPLATE_PATH = "模板/鸣谢列表模板.htm"
-THANKS_PATH_1 = "鸣谢列表/翻译奉献者列表.txt"
-THANKS_PATH_2 = "鸣谢列表/CHM制作者列表.txt"
-THANKS_PATH_3 = "鸣谢列表/纠错参与者列表.txt"
-OUTPUT_PATH = "鸣谢列表.htm"
+TEMPLATE_PATH = "../模板/鸣谢列表模板.htm"
+THANKS_PATH_1 = "../鸣谢列表/翻译奉献者列表.txt"
+THANKS_PATH_2 = "../鸣谢列表/CHM制作者列表.txt"
+THANKS_PATH_3 = "../鸣谢列表/纠错参与者列表.txt"
+OUTPUT_PATH = "../鸣谢列表.htm"
 
 def load_and_update(file: str) -> list:
     if os.path.exists(file):
@@ -17,7 +18,10 @@ def load_and_update(file: str) -> list:
             data = data.strip()
             if data not in result and len(data) > 0:
                 result.append(data)
-    result.sort()
+    # 排序
+    #result.sort()
+    # 用拼音排序
+    result.sort(key=lambda name: " ".join(lazy_pinyin(name.upper())))
     print("、".join(result))
     with open(file,'w',encoding='utf-8') as _f:
         _f.writelines([line+"\n" for line in result])
