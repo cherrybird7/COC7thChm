@@ -8,17 +8,17 @@ def convert_html_to_ini():
     }
 
     # 输入的标题数据
-    print("请输入每一行数据（输入 'END' 结束）：")
+    print("请右键贴上你的目录（回车两次结束输入）：")
     
     lines = []
     while True:
         line = input()
-        if line.strip() == 'END':  # 结束输入
+        if line.strip() == '':  # 结束输入
             break
         lines.append(line.strip())
     
     title_list = []
-    index = 9  # 从 TitleList.Title.9 开始
+    index = 9  # 从 TitleList.Title.9 开始，如果要修改起始序号，请修改这里
 
     # 维护上一级和上上一级标题
     last_h1_title = None
@@ -49,15 +49,15 @@ def convert_html_to_ini():
 
                 # 根据级别生成 URL
                 if level == 0:  # H1
-                    url = f"{title}/{title}.htm"
+                    url = f"{title}\{title}.htm"
                 elif level == 1:  # H2
-                    url = f"{last_h1_title}/{h2_count}.{title}/{title}.htm"
+                    url = f"{last_h1_title}\{h2_count}.{title}\{title}.htm"
                 elif level == 2:  # H3
-                    url = f"{last_h1_title}/{h2_count}.{last_h2_title}/{last_h2_title}/{title}.htm"
+                    url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{title}.htm"
                 elif level == 3:  # H4
-                    url = f"{last_h1_title}/{h2_count}.{last_h2_title}/{last_h2_title}/{last_h3_title}/{title}.htm"
+                    url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{last_h3_title}\{title}.htm"
                 elif level == 4:  # H5
-                    url = f"{last_h1_title}/{h2_count}.{last_h2_title}/{last_h2_title}/{last_h3_title}/{last_h4_title}/{title}.htm"
+                    url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{last_h3_title}\{last_h4_title}\{title}.htm"
                 
                 # 添加 TitleList 信息
                 title_list.append(f"TitleList.Title.{index}={title}")
@@ -72,10 +72,13 @@ def convert_html_to_ini():
                 title_list.append(f"TitleList.Kind.{index}=0")
                 index += 1
 
-    # 打印转换后的结果
-    print("\n转换后的结果是：")
-    for item in title_list:
-        print(item)
+    # 将转换后的结果写入到文本文件
+    with open("output.txt", "w", encoding="utf-8") as f:
+        for item in title_list:
+            f.write(item + "\n")
+
+    print("\n转换结果已保存到 output.txt")
+    input("请按任意键退出...")
 
 # 调用函数
 convert_html_to_ini()
