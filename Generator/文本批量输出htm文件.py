@@ -5,7 +5,7 @@ import os
 print("请右键贴上你的文件路径（按回车结束输入）：")
 file_path = input()  # 读取用户输入的文件路径
 # 识别标题作为文件名
-def extract_text_between(content, start_str, end_str):
+def extract_text_between(content, start_str, end_str): # 如果文件名要做进一步更改，请修改这里
             
     # 构建正则表达式
     pattern = rf'{re.escape(start_str)}(.*?){re.escape(end_str)}'
@@ -15,7 +15,7 @@ def extract_text_between(content, start_str, end_str):
     
     return matches
 # 识别分割正文内容
-def slice_text_by_start_str(file_path, start_str):
+def slice_text_by_start_str(file_path, start_str): 
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     
@@ -27,6 +27,7 @@ def slice_text_by_start_str(file_path, start_str):
 # 用于识别标题
 start_str = '<P><STRONG><FONT color=#800000 size=5>'  # 用于识别标题的开始字符串
 end_str = '</FONT></STRONG></P>'    # 用于识别标题的结束字符串
+# 备用：text_string = '<P><STRONG><FONT color=#800000 size=5>'
 
 # 切割文件
 results = slice_text_by_start_str(file_path, start_str)

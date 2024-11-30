@@ -2,9 +2,9 @@
 setlocal enabledelayedexpansion
 
 rem 设置模板文件路径
-set "templatePath=全白页所在的目录\全白页.htm"
+set "templatePath=C:\Users\Administrator\Desktop\全白页.htm"
 rem 设置目标文件夹
-set "outputFolder=你新设置的文件的路径"
+set "outputFolder=C:\Users\Administrator\Desktop\1"
 
 rem 创建输出文件并写入模板内容
 for %%f in (文件1 文件2 文件3 文件4 文件5) do (
