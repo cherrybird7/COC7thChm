@@ -1,5 +1,6 @@
 import re
 import os
+import codecs
 
 # 输入的文件路径
 print("请右键贴上你的文件路径（按回车结束输入）：")
@@ -45,7 +46,7 @@ for i, result in enumerate(results):
         html_prefix2 = (f"{title[0]}")
         html_prefix3 = (r"""</title>
 <meta name="GENERATOR" content="WinCHM">
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
 html,body { 
 	font-family: Arial, Helvetica, sans-serif;
@@ -74,11 +75,11 @@ html,body {
         
     # 批量生成HTML文件
         try:
-            with open(filename, 'w', encoding='utf-8') as file:
+            with open(filename, 'w', encoding='utf_8_sig') as file:
                file.write(f'{complete_html}')
                print(f"文件 {filename} 已创建。")
         except Exception as e:#如果文件名发生错误，则输出到默认文件名
-            with open(Defaultname, 'w', encoding='utf-8') as file:
+            with open(Defaultname, 'w', encoding='utf_8_sig') as file:
                file.write(f'{complete_html}')
                print(f"文件 {Defaultname} 已创建。")
 
