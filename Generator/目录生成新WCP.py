@@ -187,6 +187,7 @@ def convert_html_to_ini():
                     last_h3_title = title
 
                 # 根据级别生成 URL
+                # {h2_count}.代表第一级标题的序号，默认最上面的文件夹带有序号，如果最上面的文件夹不带序号，请删掉下方的{h2_count}.
                 if level == 0:  # H1
                     url = f"{title}\{title}.htm"
                 elif level == 1:  # H2
