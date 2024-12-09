@@ -39,13 +39,20 @@ def convert_html_to_ini():
                     last_h1_title = title
                     last_h2_title = None  # Reset last H2 when H1 is found
                     last_h3_title = None  # Reset last H3 when H1 is found
+                    last_h4_title = None
+
                 elif level == 1:  # H2
                     h2_count += 1  # 增加 H2 的数量
                     last_h2_title = title
                     last_h3_title = None  # Reset last H3 when H2 is found
+                    last_h4_title = None
 
                 elif level == 2:  # H3
                     last_h3_title = title
+                    last_h4_title = None
+                
+                elif level == 3:  # H4
+                    last_h4_title = title
 
                 # 根据级别生成 URL
                 # {h2_count}.代表第一级标题的序号，默认最上面的文件夹带有序号，如果最上面的文件夹不带序号，请删掉下方的{h2_count}.
