@@ -52,9 +52,9 @@ if __name__ == "__main__":
     thanks_list_3 = load_and_update(THANKS_PATH_3)
     print("已更新纠错参与者列表。")
     output = ""
-    with open(TEMPLATE_PATH,'r',encoding='gbk') as _f:
+    with open(TEMPLATE_PATH,'r',encoding='utf-8') as _f:
         output = _f.read()
     output = output.replace("{1}",generate_output(thanks_list_1)).replace("{2}",generate_output(thanks_list_2)).replace("{3}",generate_output(thanks_list_3))
-    with open(OUTPUT_PATH,'w',encoding='gbk',errors='ignore') as _f:
+    with open(OUTPUT_PATH,'w',encoding='utf-8',errors='ignore') as _f:
          _f.write(output)
     print("更新完毕！")
