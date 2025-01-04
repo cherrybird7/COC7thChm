@@ -1,5 +1,4 @@
 import codecs
-import socket
 
 PREFIX = """[GENERAL]
 Ver=1
@@ -142,7 +141,7 @@ def convert_html_to_ini():
         'H3': 2,
         'H4': 3,
         'H5': 4,
-        'H6': 6
+        'H6': 5
     }
 
 
