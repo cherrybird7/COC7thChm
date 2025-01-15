@@ -40,8 +40,7 @@ def convert_txt_to_html(folder_path):
                     # 将每行内容包裹在<p>标签中
                     content = ''.join([f'<p>{line.strip()}</p>\n' for line in lines[1:]])
                     
-                    htm_content = f"""<!DOCTYPE html>
-<!-- coding: gbk --><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                    htm_content = f"""<!-- coding: gbk --><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>{title}</title>
