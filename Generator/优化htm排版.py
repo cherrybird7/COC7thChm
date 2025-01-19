@@ -14,20 +14,7 @@ def convert_tags_to_lowercase(file_path):
     
     if has_uppercase:
         print(f'发现大写标签，正在转换文件: {file_path}')
-        
-        # 将连续4个空格替换为制表符（支持全角和半角空格）
-        content = re.sub(r'[ 　]{4}', '\t', content)
-        
-        # 合并被分成多行的HTML元素
-        content = re.sub(r'>\s*[\r\n]+\s*<', '><', content)
-        
-        # 删除标签内容中的换行符
-        content = re.sub(r'(<[^>]+>)[\r\n]+', r'\1', content)
-        content = re.sub(r'[\r\n]+(<[^>]+>)', r'\1', content)
-        
-        # 处理<br>标签
-        content = re.sub(r'([^\n])<br>', r'\1\n<br>', content)
-        
+
         # 将所有标签转换为小写
         new_content = re.sub(r'<([^>]+)>', lambda match: f'<{match.group(1).lower()}>', content)
         
