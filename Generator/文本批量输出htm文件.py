@@ -38,7 +38,7 @@ for i, result in enumerate(results):
         sect = start_str + result # 原标题格式带正文，用于输出到HTML文件中
         title = extract_text_between(sect, start_str, end_str) # 纯文本标题，用于输出文件名
         # HTML前缀
-        html_prefix1 = (r"""<!-- coding: gbk --><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+        html_prefix1 = (r"""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>""")
@@ -46,14 +46,9 @@ for i, result in enumerate(results):
         html_prefix3 = (r"""</title>
 <meta name="GENERATOR" content="WinCHM">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-html,body { 
-	font-family: Arial, Helvetica, sans-serif;
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="d:\coc不全书\coc7thchm\style.css">
+<style></style>
 </head>
-
 <body>""") 
         html_suffix = (f"""\n{start_str + result}</body>
 </html>""")# 插入正文
