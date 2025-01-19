@@ -56,7 +56,7 @@ table {
 table th {
 		font-weight: bold;
 		background-color: #000000;
-		color: #f5c589;
+		background-color: #f5c589;
 		border: 1px solid #000000;
 	  }	
 /* 传统表格样式 */
