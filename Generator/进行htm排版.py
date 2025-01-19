@@ -5,7 +5,7 @@ import re
 TAGS = [
     r'<html>', r'<head>', r'<title>', r'<meta', r'<link', r'<style>',
     r'</head>', r'<body>', r'<h1', r'<h2', r'<h3', r'<h4', r'<br>',r'<hr>'
-    r'<div', r'<table', r'<tr', r'<td', r'<ul>', r'<ol>', r'<li',
+    r'<p'r'<div', r'<table', r'<tr', r'<td', r'<ul>', r'<ol>', r'<li',
     r'</body>', r'</html>'
 ]
 
