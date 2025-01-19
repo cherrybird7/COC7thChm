@@ -9,7 +9,7 @@ def merge_lines_in_file(file_path):
     merged = re.sub(r'(?<!\n)\n(?!\n|<style>|</style>)', ' ', content)
     # 处理<style>标签内的CSS
     merged = re.sub(r'(?<=<style>)(.*?)(?=</style>)', 
-                   lambda m: re.sub(r'\s*\n\s*', ' ', m.group(0)), 
+                   lambda m: re.sub(r'\s*\n\s*', '', m.group(0)), 
                    merged, flags=re.DOTALL)
     
     with open(file_path, 'w', encoding='utf-8') as f:
