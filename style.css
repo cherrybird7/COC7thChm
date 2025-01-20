@@ -42,7 +42,8 @@ p {
 	margin-inline-end: 0px;
 	unicode-bidi: isolate;
 	}
-table {
+/* 交替平分居中表格样式 */
+#zebra-table {
 		border-collapse: collapse;
 		display: grid;
 		border-radius: 1px;
@@ -53,17 +54,41 @@ table {
 		text-align: center;
 		table-layout: fixed;
 	}
-table th {
+#zebra-table th {
 		font-weight: bold;
-		background-color: #000000;
 		background-color: #f5c589;
 		border: 1px solid #000000;
-	  }	
-/* 传统表格样式 */
-table td {
+	  }
+#zebra-table td {
 		border: 1px solid #000000;
 		text-align: center;
 	  }
+/* 交替平分不居中表格样式 */
+#zebraleft-table {
+	border-collapse: collapse;
+	display: grid;
+	border-radius: 1px;
+	border: 1px solid #000000;
+	background-color: #fffbf0;
+	display: grid;
+	width: 100%;
+	table-layout: fixed;
+}
+#zebraleft-table th {
+	font-weight: bold;
+	background-color: #000000;
+	background-color: #f5c589;
+	border: 1px solid #000000;
+  }	
+#zebraleft-table td {
+	border: 1px solid #000000;
+	text-align: center;
+  }
+/* 标题行背景元素 */
+.tabletitle {
+	background-color: #b75926
+}
+/* 偶数量行背景元素 */
 .odd {
 	background-color: #ffffff
 }
