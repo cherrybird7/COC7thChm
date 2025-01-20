@@ -1,6 +1,8 @@
+/* 字体格式 */
 html,body { 
 	font-family: Arial, Helvetica, sans-serif;
 }
+/* 标题格式 */
 h1{
 	color:#800000;
 	font-size: 24pt;
@@ -9,6 +11,9 @@ h2{
 	color:#800000;
 	margin-bottom: -10px;
 	font-size: 18pt;
+	}
+h3{
+	color:#800000;
 	}
 .yinyan{
 	font-style: italic;
@@ -64,7 +69,7 @@ p {
 		text-align: center;
 	  }
 /* 交替平分不居中表格样式 */
-#zebraleft-table {
+#left-table {
 	border-collapse: collapse;
 	display: grid;
 	border-radius: 1px;
@@ -74,19 +79,19 @@ p {
 	width: 100%;
 	table-layout: fixed;
 }
-#zebraleft-table th {
+#left-table th {
 	font-weight: bold;
-	background-color: #000000;
 	background-color: #f5c589;
 	border: 1px solid #000000;
-  }	
-#zebraleft-table td {
+	text-align:left;
+}
+#left-table td {
 	border: 1px solid #000000;
-	text-align: center;
   }
 /* 标题行背景元素 */
 .tabletitle {
-	background-color: #b75926
+	background-color: #b75926 !important;
+	text-align:center !important;
 }
 /* 偶数量行背景元素 */
 .odd {
@@ -104,18 +109,21 @@ p {
 		color:#000000;
 		background-color:#f5c589;
 	}
-.monstertable {
+#monstertable-table {
 		display: table;
 		width: 100%;
 		border-collapse: collapse;
-		border: 1px solid#ddd;
+		border: 1px solid#000000;
 		display: grid;
 		width: 100%;
 		border-collapse: collapse;
 		text-align: center;
 		table-layout: fixed;
 	}
-.cells {
-		padding: 8px;
-		border: 1px solid #ddd;
-	}
+#monstertable-table th {
+		font-weight: bold;
+		border: 1px solid #000000;
+	  }
+#monstertable-table td {
+		border: 1px solid #000000;
+	  }
