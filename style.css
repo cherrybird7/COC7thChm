@@ -1,0 +1,146 @@
+/* 此为文件用于记载COC不全书的格式信息 */
+/* 字体格式 */
+html,body { 
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* 标题格式 */
+h1{
+	color:#800000;
+	font-size: 24pt;
+	}
+h2{
+	color:#800000;
+	margin-bottom: -10px;
+	font-size: 18pt;
+	}
+h3{
+	color:#800000;
+	}
+.yinyan{
+	font-style: italic;
+	text-align: left;
+	margin-top: 5px;
+	}
+.yinyongming{
+		font-style: italic;
+		text-align: right;
+		margin-bottom: 5px;
+	}
+.bianlan{
+	border-radius: 1px;
+	border: 2px solid #000000;
+	background-color: #fffbf0;
+	width: 100%;
+	text-align: left;
+	padding: 10px;
+	}
+.bianlantitle{
+		font-weight: bold;
+		color:#000000;
+		font-size: 14pt;
+		margin-bottom: 5px;
+	}
+p {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	unicode-bidi: isolate;
+	}
+/* 交替平分居中表格样式 */
+#zebra-table {
+		border-collapse: collapse;
+		display: grid;
+		border-radius: 1px;
+		border: 1px solid #000000;
+		background-color: #fffbf0;
+		display: grid;
+		width: 100%;
+		text-align: center;
+		table-layout: fixed;
+	}
+#zebra-table th {
+		font-weight: bold;
+		background-color: #f5c589;
+		border: 1px solid #000000;
+	  }
+#zebra-table td {
+		border: 1px solid #000000;
+	  }
+/* 交替不平分不居中表格样式 */
+#left-table {
+	border-collapse: collapse;
+	display: grid;
+	border-radius: 1px;
+	border: 1px solid #000000;
+	background-color: #fffbf0;
+	display: grid;
+	width: 100%;
+}
+#left-table th {
+	font-weight: bold;
+	background-color: #f5c589;
+	border: 1px solid #000000;
+}
+#left-table td {
+	border: 1px solid #000000;
+  }
+/* 交替居中不平分表格样式 */
+#nofixed-table {
+	border-collapse: collapse;
+	display: grid;
+	border-radius: 1px;
+	border: 1px solid #000000;
+	background-color: #fffbf0;
+	display: grid;
+	width: 100%;
+	text-align: center;
+}
+#nofixed-table th {
+	font-weight: bold;
+	background-color: #f5c589;
+	border: 1px solid #000000;
+}
+#nofixed-table td {
+	border: 1px solid #000000;
+  }
+/* 标题行背景元素 */
+.tabletitle {
+	background-color: #b75926 !important;
+	text-align:center !important;
+}
+/* 偶数量行背景元素 */
+.odd {
+	background-color: #ffffff
+}
+/* div模拟表格样式 */
+.row {
+	display: contents;
+}
+.cell {
+	border: 1px solid #000000;
+}
+.header {
+		font-weight: bold;
+		color:#000000;
+		background-color:#f5c589;
+	}
+#monstertable-table {
+		display: table;
+		width: 100%;
+		border-collapse: collapse;
+		border: 1px solid#000000;
+		display: grid;
+		width: 100%;
+		border-collapse: collapse;
+		text-align: center;
+		table-layout: fixed;
+	}
+#monstertable-table th {
+		font-weight: bold;
+		border: 1px solid #000000;
+	  }
+#monstertable-table td {
+		border: 1px solid #000000;
+	  }

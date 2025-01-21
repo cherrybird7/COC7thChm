@@ -40,17 +40,14 @@ def convert_txt_to_html(folder_path):
                     # 将每行内容包裹在<p>标签中
                     content = ''.join([f'<p>{line.strip()}</p>\n' for line in lines[1:]])
                     
-                    htm_content = f"""<!-- coding: gbk --><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+                    htm_content = f"""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>{title}</title>
 <meta name="GENERATOR" content="WinCHM">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-html,body {{ 
-    font-family: Arial, Helvetica, sans-serif;
-}}
-</style>
+<link rel="stylesheet" type="text/css" href="d:\coc不全书\coc7thchm\style.css">
+<style></style>
 </head>
 <body>
 <P><STRONG><FONT color=#800000 size=6>{title}</FONT></STRONG></P>
