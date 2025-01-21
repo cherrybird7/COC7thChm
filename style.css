@@ -1,3 +1,4 @@
+/* 此为文件用于记载COC不全书的格式信息 */
 /* 字体格式 */
 html,body { 
 	font-family: Arial, Helvetica, sans-serif;
@@ -67,7 +68,7 @@ p {
 #zebra-table td {
 		border: 1px solid #000000;
 	  }
-/* 交替平分不居中表格样式 */
+/* 交替不平分不居中表格样式 */
 #left-table {
 	border-collapse: collapse;
 	display: grid;
@@ -76,7 +77,6 @@ p {
 	background-color: #fffbf0;
 	display: grid;
 	width: 100%;
-	table-layout: fixed;
 }
 #left-table th {
 	font-weight: bold;
@@ -86,26 +86,7 @@ p {
 #left-table td {
 	border: 1px solid #000000;
   }
-/* 交替不居中平分表格样式 */
-#nofixedenter-table {
-	border-collapse: collapse;
-	display: grid;
-	border-radius: 1px;
-	border: 1px solid #000000;
-	background-color: #fffbf0;
-	display: grid;
-	width: 100%;
-	text-align: center;
-}
-#nofixedenter-table th {
-	font-weight: bold;
-	background-color: #f5c589;
-	border: 1px solid #000000;
-}
-#nofixedenter-table td {
-	border: 1px solid #000000;
-  }
-/* 交替不居中不平分表格样式 */
+/* 交替居中不平分表格样式 */
 #nofixed-table {
 	border-collapse: collapse;
 	display: grid;
@@ -114,6 +95,7 @@ p {
 	background-color: #fffbf0;
 	display: grid;
 	width: 100%;
+	text-align: center;
 }
 #nofixed-table th {
 	font-weight: bold;

@@ -43,7 +43,7 @@
 <div class="bianlan">
 <div class="bianlantitle">表格：收入和地位</div>
 <p>
-<table style="border-collapse: collapse" bordercolor=#000000 cellspacing=0 cellpadding=2 width="100%" bgcolor=#fffbf0 border=1>
+<table id="left-table">
 <tr>
 <th>收入情况</th>
 <th>地位</th></tr>
@@ -83,23 +83,23 @@
 <p>
 <table id="zebra-table">
 <tr>
-<th width="50%">1 立方码</th>
-<th width="50%">所需时间</th></tr>
+<th>1 立方码</th>
+<th>所需时间</th></tr>
 <tr>
-<td width="50%">松散土壤</td>
-<td width="50%">半小时的不懈努力</td></tr>
+<td>松散土壤</td>
+<td>半小时的不懈努力</td></tr>
 <tr class="odd">
-<td width="50%">普通土壤</td>
-<td width="50%">1 小时的不懈努力</td></tr>
+<td>普通土壤</td>
+<td>1 小时的不懈努力</td></tr>
 <tr>
-<td width="50%">紧实粘土</td>
-<td width="50%">2 小时的不懈努力</td></tr>
+<td>紧实粘土</td>
+<td>2 小时的不懈努力</td></tr>
 <tr class="odd">
-<td width="50%">石灰岩或砂岩</td>
-<td width="50%">25 小时的不懈努力</td></tr>
+<td>石灰岩或砂岩</td>
+<td>25 小时的不懈努力</td></tr>
 <tr>
-<td width="50%">花岗岩</td>
-<td width="50%">40 小时的不懈努力</td></tr></table></p></div>
+<td>花岗岩</td>
+<td>40 小时的不懈努力</td></tr></table></p></div>
 <h3>阻碍</h3>
 <p>（译注：阻碍（Obstacles）与守秘人规则书追逐章节中的障碍（Barriers）不是同一概念。）</p>
 <p>有些情况下，调查员可能需要突破阻碍，如大门或墙壁。通常这样的阻碍可以简单地依靠力量检定来处理，或是给该阻碍设置一个生命值——对于简易木门之类的物体，其生命值降低至一半或更少时，它将不再构成阻碍。但某些
@@ -108,42 +108,41 @@
 <div class="bianlantitle">表格：人造阻碍</div>
 <p>
 <table id="zebra-table">
-<tbody>
 <tr>
-<th width="25%">阻碍</th>
-<th width="25%">护甲</th>
-<th width="25%">HP<sup>1</sup></th>
-<th width="25%">时间<sup>2</sup></td></tr>
+<th>阻碍</th>
+<th>护甲</th>
+<th>HP<sup>1</sup></th>
+<th>时间<sup>2</sup></td></tr>
 <tr>
-<td width="25%">棚屋墙和门</td>
-<td width="25%">0</td>
-<td width="25%">5</td>
-<td width="25%">3 轮</td></tr>
+<td>棚屋墙和门</td>
+<td>0</td>
+<td>5</td>
+<td>3 轮</td></tr>
 <tr class="odd">
-<td width="25%">松木板</td>
-<td width="25%">1</td>
-<td width="25%">10</td>
-<td width="25%">5 轮</td></tr>
+<td>松木板</td>
+<td>1</td>
+<td>10</td>
+<td>5 轮</td></tr>
 <tr>
-<td width="25%">抹灰荆棘墙</td>
-<td width="25%">1</td>
-<td width="25%">15</td>
-<td width="25%">10 轮</td></tr>
+<td>抹灰荆棘墙</td>
+<td>1</td>
+<td>15</td>
+<td>10 轮</td></tr>
 <tr class="odd">
-<td width="25%">结实的橡木门</td>
-<td width="25%">1</td>
-<td width="25%">15</td>
-<td width="25%">10 轮</td></tr>
+<td>结实的橡木门</td>
+<td>1</td>
+<td>15</td>
+<td>10 轮</td></tr>
 <tr>
-<td width="25%">木栅栏</td>
-<td width="25%">2</td>
-<td width="25%">60</td>
-<td width="25%">10 分钟</td></tr>
+<td>木栅栏</td>
+<td>2</td>
+<td>60</td>
+<td>10 分钟</td></tr>
 <tr class="odd">
-<td width="25%">1 英尺砖墙</td>
-<td width="25%">6</td>
-<td width="25%">300</td>
-<td width="25%">100 分钟</td></tr></table></p>
+<td>1 英尺砖墙</td>
+<td>6</td>
+<td>300</td>
+<td>100 分钟</td></tr></table></p>
 <p><b>释义：</b></p>
 <br>1-HP：生命值，并非护甲，与厚度成正比。根据需要进行调整。
 <br>2-时间：（一个普通人利用合适的工具）所需的拆除时间。</td></tr></tbody></table></p>
@@ -156,17 +155,17 @@
 <p>
 <table id="zebra-table">
 <tr>
-<th width="50%">阻碍</th>
-<th width="50%">工具</th></tr>
+<th>阻碍</th>
+<th>工具</th></tr>
 <tr>
-<td width="50%">木头</td>
-<td width="50%">伐木斧（基础值 15%，伤害 2D6）</td></tr>
+<td>木头</td>
+<td>伐木斧（基础值 15%，伤害 2D6）</td></tr>
 <tr class="odd">
-<td width="50%">石墙（厚度 6 英寸以内）</td>
-<td width="50%">采石锤（基础值 25%，伤害 2D6）</td></tr>
+<td>石墙（厚度 6 英寸以内）</td>
+<td>采石锤（基础值 25%，伤害 2D6）</td></tr>
 <tr>
-<td width="50%">石墙（厚度 6 英寸以上）</td>
-<td width="50%">镐（基础值 15%，伤害 2D6）</td></tr></table></p>
+<td>石墙（厚度 6 英寸以上）</td>
+<td>镐（基础值 15%，伤害 2D6）</td></tr></table></p>
 <h3>自然阻碍和距离</h3>
 <p>在当时的欧洲，40%~60% 的土地都被森林覆盖。驾牛车的人每天可以旅行 15 英里，步行则是 20 英里，骑马则是 40 英里。越野旅行时速度减半，若穿越丘陵或山岳，速度再次减半。若穿越沼泽或雪地，速度降至四分之一。穿越一条大河（除非有桥或能够涉水而过）需要花上一整天，如果水流特别难以通行，则可能需要进行动物驯养、敏捷和/或游泳检定。</p>
 <p>只要有足够的食物、水和夜间休息，以上速度可以无限维持。绝望的人能够以两倍的速度行进，但如此行进一天后需要休息一整天的时间（24 小时）。</p>
