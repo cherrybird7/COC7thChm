@@ -105,6 +105,25 @@ p {
 #nofixed-table td {
 	border: 1px solid #000000;
   }
+/* 交替不居中但平分表格样式 */
+#zebrafixed-table {
+	border-collapse: collapse;
+	display: grid;
+	border-radius: 1px;
+	border: 1px solid #000000;
+	background-color: #fffbf0;
+	display: grid;
+	width: 100%;
+	table-layout: fixed;
+}
+#zebrafixed-table th {
+	font-weight: bold;
+	background-color: #f5c589;
+	border: 1px solid #000000;
+}
+#zebrafixed-table td {
+	border: 1px solid #000000;
+  }
 /* 标题行背景元素 */
 .tabletitle {
 	background-color: #b75926 !important;
