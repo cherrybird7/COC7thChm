@@ -23,7 +23,7 @@ class TableGeneratorApp:
         self.table_type_var = tk.StringVar(value="普通表格")
         ttk.Label(self.main_frame, text="表格类型:").grid(row=1, column=0, sticky="W")
         self.table_type_combobox = ttk.Combobox(self.main_frame, textvariable=self.table_type_var,
-                                              values=["普通表格", "怪物属性表", "骰点表/特征表（默认表格第一列内文本都加粗居中）"])
+                                              values=["普通表格", "怪物属性表", "骰点表/特征表"])
         self.table_type_combobox.grid(row=1, column=1, sticky="EW")
         self.table_type_combobox.bind("<<ComboboxSelected>>", self.update_options)
         
