@@ -24,9 +24,9 @@ def slice_text_by_start_str(file_path, start_str):
     
     return parts
 
-# 用于识别标题
-start_str = '<P><STRONG><FONT color=#800000 size=6>'  # 用于识别标题的开始字符串
-end_str = '</FONT></STRONG></P>'    # 用于识别标题的结束字符串
+# 用于识别标题h1
+start_str = '<h1>'  # 用于识别标题的开始字符串
+end_str = '</h1>'    # 用于识别标题的结束字符串
 # 备用：text_string = '<P><STRONG><FONT color=#800000 size=6>'
 
 # 切割文件
