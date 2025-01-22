@@ -38,7 +38,7 @@ for i, result in enumerate(results):
         sect = start_str + result # 原标题格式带正文，用于输出到HTML文件中
         title = extract_text_between(sect, start_str, end_str) # 纯文本标题，用于输出文件名
         # HTML前缀
-        html_prefix1 = (r"""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+        html_prefix1 = (r"""<!doctype html public "-//w3c//dtd html 4.01 transitional//en">
 <html>
 <head>
 <title>""")

@@ -6,40 +6,40 @@ Title=COC7th 不全书
 RootDir=
 Dictionary=en_US
 DefaultTopic=写在前面.htm
-CompiledFile=<Project_Folder>_output\HTML Help\试做 COC 残缺大典原始版本.chm
+CompiledFile=<Project_Folder>_output\hTML help\试做 COC 残缺大典原始版本.chm
 CustomTemplate=<Project_Folder>\模板\空白页模板.htm
 DefaultTemplate=0
 Language=0x0804
 Encoding=UTF-8
 DeleteProject=0
 ViewCompiledFile=0
-HasChild=0
+hasChild=0
 NoChild=10
-HtmlHelpTemplate=
-HtmlHelpTitle=COC7th 不全书
-HtmlHelpTitleSame=1
-HtmlHelpOutputEncoding=gb2312
-WebHelpDefault=写在前面.htm
-WebHelpOutputFolder=<Project_Folder>_output\Web Help\
-WebHelpTemplate=
-WebHelpTitle=COC7th 不全书
-WebHelpDefaultSame=1
-WebHelpTemplateSame=1
-WebHelpTilteSame=1
-WebHelpLanguage=1
+htmlhelpTemplate=
+htmlhelpTitle=COC7th 不全书
+htmlhelpTitleSame=1
+htmlhelpOutputEncoding=gb2312
+WebhelpDefault=写在前面.htm
+WebhelpOutputFolder=<Project_Folder>_output\Web help\
+WebhelpTemplate=
+WebhelpTitle=COC7th 不全书
+WebhelpDefaultSame=1
+WebhelpTemplateSame=1
+WebhelpTilteSame=1
+WebhelpLanguage=1
 StartFromRoot=1
 AutoCollapse=0
 DrawLines=1
-SingleHtmlFilename=试做 COC 残缺大典原始版本 (2).htm
-SingleHtmlOutputFolder=<Project_Folder>_output\SingleHTML\
-SingleHtmlTitle=COC7th 不全书
-SingleHtmlHasToc=0
-SingleHtmlSame=1
+SinglehtmlFilename=试做 COC 残缺大典原始版本 (2).htm
+SinglehtmlOutputFolder=<Project_Folder>_output\SinglehTML\
+SinglehtmlTitle=COC7th 不全书
+SinglehtmlhasToc=0
+SinglehtmlSame=1
 WordFileTitle=COC7th 不全书
 WordFileTitleSame=1
 WordFile=<Project_Folder>_output\WordDoc\a.docx
 PDFfile=<Project_Folder>_output\PDF\a.pdf
-HeadProperties=1
+headProperties=1
 PageProperties=1
 RealColorIcon=0
 ShowIndex=1
@@ -47,34 +47,34 @@ NavWidth=270
 WebFontColor=#DBEFF9
 WebBackColor=
 WebBackground=1
-HHPFolder=
+hhPFolder=
 
-[CHMSetting]
+[ChMSetting]
 Top=50
 Left=50
-Height=500
+height=500
 Width=700
 PaneWidth=270
 DefaultTab=0
 ShowMSDNMenu=0
 ShowPanesToolbar=1
 ShowPane=1
-HideToolbar=0
-HideToolbarText=0
+hideToolbar=0
+hideToolbarText=0
 StayOnTop=0
 Maximize=0
-Hide=1
+hide=1
 Locate=1
 Back=1
 bForward=1
 Stop=1
 Refresh=1
-Home=1
+home=1
 Print=1
 Option=1
 Jump1=0
 Jump2=0
-AutoShowHide=0
+AutoShowhide=0
 AutoSync=1
 Content=1
 Index=1
@@ -104,22 +104,22 @@ DefaultTopic=写在前面.htm
 
 [DocSetting]
 PaperSize=4
-Height=0
+height=0
 Width=0
 Top=25
 Bottom=25
 Left=30
 Right=30
 Cover=1
-Header=1
+header=1
 Footer=1
 Toc=1
 XE=0
 ShowLevel=3
 TOCCaption=Table of Contents
 TitleNumber=1
-AddHint=0
-HintFormat=See [Title No.]
+Addhint=0
+hintFormat=See [Title No.]
 StartNewPage=0
 Discard=1
 Addenda=Addenda
@@ -136,12 +136,12 @@ def convert_html_to_ini():
     object_list = ""
     
     title_level_map = {
-        'H1': 0,
-        'H2': 1,
-        'H3': 2,
-        'H4': 3,
-        'H5': 4,
-        'H6': 5
+        'h1': 0,
+        'h2': 1,
+        'h3': 2,
+        'h4': 3,
+        'h5': 4,
+        'h6': 5
     }
 
 
@@ -162,9 +162,9 @@ def convert_html_to_ini():
     # 维护上一级和上上一级标题
     last_h1_title = None
     last_h2_title = None
-    last_h2_index = 0  # H2 的当前序号
+    last_h2_index = 0  # h2 的当前序号
     last_h3_title = None
-    h2_count = 0  # 用于跟踪 H2 的数量
+    h2_count = 0  # 用于跟踪 h2 的数量
 
     for line in lines:
         if line.startswith("<") and line.endswith(">"):
@@ -174,41 +174,41 @@ def convert_html_to_ini():
 
             if level is not None:
                 # 根据标题级别更新上一级标题
-                if level == 0:  # H1
+                if level == 0:  # h1
                     last_h1_title = title
-                    last_h2_title = None  # Reset last H2 when H1 is found
-                    last_h3_title = None  # Reset last H3 when H1 is found
+                    last_h2_title = None  # Reset last h2 when h1 is found
+                    last_h3_title = None  # Reset last h3 when h1 is found
                     last_h4_title = None
 
-                elif level == 1:  # H2
-                    h2_count += 1  # 增加 H2 的数量
+                elif level == 1:  # h2
+                    h2_count += 1  # 增加 h2 的数量
                     last_h2_title = title
-                    last_h3_title = None  # Reset last H3 when H2 is found
+                    last_h3_title = None  # Reset last h3 when h2 is found
                     last_h4_title = None
 
-                elif level == 2:  # H3
+                elif level == 2:  # h3
                     last_h3_title = title
                     last_h4_title = None
                 
-                elif level == 3:  # H4
+                elif level == 3:  # h4
                     last_h4_title = title
 
-                elif level == 4:  # H5
+                elif level == 4:  # h5
                     last_h5_title = title
 
                 # 根据级别生成 URL
                 # {h2_count}.代表第一级标题的序号，默认最上面的文件夹带有序号，如果最上面的文件夹不带序号，请删掉下方的{h2_count}.
-                if level == 0:  # H1
+                if level == 0:  # h1
                     url = f"{title}\{title}.htm"
-                elif level == 1:  # H2
+                elif level == 1:  # h2
                     url = f"{last_h1_title}\{h2_count}.{title}\{title}.htm"
-                elif level == 2:  # H3
+                elif level == 2:  # h3
                     url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{title}.htm"
-                elif level == 3:  # H4
+                elif level == 3:  # h4
                     url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{last_h3_title}\{title}.htm"
-                elif level == 4:  # H5
+                elif level == 4:  # h5
                     url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{last_h3_title}\{last_h4_title}\{title}.htm"
-                elif level == 5:  # H6
+                elif level == 5:  # h6
                     url = f"{last_h1_title}\{h2_count}.{last_h2_title}\{last_h3_title}\{last_h4_title}\{last_h5_title}\{title}.htm"
                 
                 # 添加 TitleList 信息
