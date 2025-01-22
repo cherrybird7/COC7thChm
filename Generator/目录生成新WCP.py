@@ -1,4 +1,5 @@
 import codecs
+import os
 
 PREFIX = """[GENERAL]
 Ver=1
@@ -164,6 +165,8 @@ def convert_html_to_ini():
     last_h2_title = None
     last_h2_index = 0  # H2 的当前序号
     last_h3_title = None
+    last_h4_title = None
+    last_h5_title = None
     h2_count = 0  # 用于跟踪 H2 的数量
 
     for line in lines:
@@ -224,19 +227,22 @@ def convert_html_to_ini():
                 title_list.append(f"TitleList.Kind.{index}=0")
                 index += 1
                 
-                for item in title_list:
-                    object_list += item + "\n"
-          
-    filename = (f"{name}.wcp") # 文件名
+    # 将title_list内容添加到object_list
+    object_list = "\n".join(title_list) + "\n"
+    
+    filename = f"{name}.wcp" # 文件名
     prefixtext = PREFIX + str(index) + "\n" # 前缀信息
 
     ## 创建 wcp 文件
     try:
-       with open("../"+filename,'wb') as _f:
-           _f.write(codecs.BOM_UTF16_LE)
-           _f.write((prefixtext + object_list).encode('utf-16-le'))
-    except Exception as e:#如果出错，打印错误信息
-       print(f"写入文件失败：{e}")
+        output_dir = os.path.dirname(os.path.abspath(__file__))
+        output_path = os.path.join(output_dir, filename)
+        os.makedirs(output_dir, exist_ok=True)
+        with open(output_path, 'wb') as _f:
+            _f.write(codecs.BOM_UTF16_LE)
+            _f.write((prefixtext + object_list).encode('utf-16-le'))
+    except Exception as e:  # 如果出错，打印错误信息
+        print(f"写入文件失败：{e}")
 
     print(f"\n{filename}已生成")
     input("请按任意键退出...")
