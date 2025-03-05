@@ -98,8 +98,8 @@ DialogFrame=0
 RaisedEdge=0
 SunkenEdge=0
 SavePosition=0
-ContentsFont=,8,0
-IndexFont=,8,0
+ContentsFont=,10,0
+IndexFont=,10,0
 Title=COC7th 不全书
 Language=0x0804
 Font=
@@ -156,7 +156,7 @@ if __name__ == "__main__":
         object_str_list = []
         index = 0
         for object_data in object_list:
-            object_str_list.append("TitleList.Title."+str(index)+"="+object_data[0]+"\nTitleList.Level."+str(index)+"="+str(object_data[2])+"\nTitleList.Url."+str(index)+"="+object_data[1]+"\nTitleList.Status."+str(index)+"=0\nTitleList.Keywords."+str(index)+"=\nTitleList.ContextNumber."+str(index)+"="+str(index+1000)+"\nTitleList.ApplyTemp."+str(index)+"=0\nTitleList.Expanded."+str(index)+"=0\nTitleList.Kind."+str(index)+"=0")
+            object_str_list.append("TitleList.Title."+str(index)+"="+object_data[0]+"\nTitleList.Level."+str(index)+"="+str(object_data[2])+"\nTitleList.Url."+str(index)+"="+object_data[1]+"\nTitleList.Icon."+str(index)+"=0\nTitleList.Status."+str(index)+"=0\nTitleList.Keywords."+str(index)+"=\nTitleList.ContextNumber."+str(index)+"="+str(index+1000)+"\nTitleList.ApplyTemp."+str(index)+"=0\nTitleList.Expanded."+str(index)+"=0\nTitleList.Kind."+str(index)+"=0")
             index += 1
         
         with open("../"+wcp_name+"_生成.wcp",'wb') as _f:
